@@ -1,9 +1,10 @@
-import {BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./Header/Header.jsx";
 import HomePage from "./HomePage/HomePage.jsx";
 import About from "./About/About.jsx";
 import Portfolio from "./OurPortfolio/OurPortfolio";
-
+import Reviews from "./Reviews/Reviews.jsx";
+import Partners from "./Partners/Partners.jsx";
 
 function App() {
   return (
@@ -11,9 +12,11 @@ function App() {
       <Router>
         <div className="app">
           <Header />
-            <HomePage />
-            <About />
-            <Portfolio />
+          <HomePage />
+          <About />
+          <Portfolio />
+          <Reviews />
+          <Partners />
         </div>
       </Router>
     </div>

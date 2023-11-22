@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import portfolio from "../images/portfolio.png";
 
 const PortfolioContainer = styled.div`
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
   padding: 20px;
+  background-color: black;
 `;
 
 const PortfolioItem = styled.div`
@@ -14,47 +15,32 @@ const PortfolioItem = styled.div`
   text-align: center;
 `;
 
-const TextContainer = styled.div`
+const PortfolioText = styled.p`
   flex: 1;
-  text-align: center;
+  text-align: left;
   padding: 20px;
   color: white;
   max-width: 600px;
 `;
 
-const PortfolioImage = styled.img`
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-`;
-
-const PortfolioText = styled.p`
-  margin-top: 10px;
-  color: #333;
-`;
-
 const Portfolio = () => {
-    return (
-        <>
-            <PortfolioContainer>
-                <PortfolioItem>
-                    <PortfolioImage></PortfolioImage>
-                </PortfolioItem>
-            </PortfolioContainer>
-
-            <PortfolioContainer>
-                <PortfolioItem>
-                    <PortfolioImage></PortfolioImage>
-                </PortfolioItem>
-            </PortfolioContainer>
-
-            <PortfolioContainer>
-                <PortfolioItem>
-                    <PortfolioImage></PortfolioImage>
-                </PortfolioItem>
-            </PortfolioContainer>
-        </>
-    )
-}
+  return (
+    <>
+      <PortfolioContainer>
+        <PortfolioText>
+          <h2 style={{ textTransform: "uppercase" }}>Our Portfolio</h2>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s
+          </p>
+        </PortfolioText>
+        <PortfolioItem>
+          <img src={portfolio} alt="portfolio" />
+        </PortfolioItem>
+      </PortfolioContainer>
+    </>
+  );
+};
 
 export default Portfolio;
