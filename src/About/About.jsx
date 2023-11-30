@@ -1,12 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import about from "../images/about.png";
+<<<<<<< HEAD
+=======
+import backgroundImage from "../images/background_image.png"
+>>>>>>> 619310f (header,homepage updates)
 
 const AboutContainer = styled.div`
   background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   padding: 20px;
 `;
 
@@ -14,14 +19,26 @@ const TextContainer = styled.div`
   flex: 1;
   text-align: center;
   padding: 20px;
+=======
+`;
+
+const TextContainer = styled.div`
+  flex: 3;
+>>>>>>> 619310f (header,homepage updates)
   color: white;
   max-width: 600px;
 `;
 
 const PhotoContainer = styled.div`
+<<<<<<< HEAD
   flex: 1;
   text-align: center;
   position: relative;
+=======
+  flex: 3;
+  text-align: center;
+  max-width: 700px;
+>>>>>>> 619310f (header,homepage updates)
 `;
 
 const ReadMoreButton = styled.button`
@@ -34,11 +51,26 @@ const ReadMoreButton = styled.button`
   margin-top: 10px;
 `;
 
+<<<<<<< HEAD
+=======
+const BackgroundContainer = styled.div`
+  //position: relative;
+  
+`;
+
+
+>>>>>>> 619310f (header,homepage updates)
 const About = () => {
   return (
     <AboutContainer>
       <TextContainer>
+<<<<<<< HEAD
         <h2 style={{ textTransform: "uppercase" }}>About out company</h2>
+=======
+        <h2 style={{ textTransform: "uppercase", marginBottom: "20px" }}>
+          About out company
+        </h2>
+>>>>>>> 619310f (header,homepage updates)
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -55,6 +87,12 @@ const About = () => {
       <PhotoContainer>
         <img src={about} alt="about" />
       </PhotoContainer>
+<<<<<<< HEAD
+=======
+      {/*<BackgroundContainer>*/}
+      {/*  <img src={backgroundImage} alt="background_image"/>*/}
+      {/*</BackgroundContainer>*/}
+>>>>>>> 619310f (header,homepage updates)
     </AboutContainer>
   );
 };

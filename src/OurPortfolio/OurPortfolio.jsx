@@ -3,7 +3,10 @@ import styled from "styled-components";
 import portfolio from "../images/portfolio.png";
 
 const PortfolioContainer = styled.div`
+<<<<<<< HEAD
   display: flex;
+=======
+>>>>>>> 619310f (header,homepage updates)
   flex-wrap: wrap;
   padding: 20px;
   background-color: black;
@@ -16,11 +19,29 @@ const PortfolioItem = styled.div`
 `;
 
 const PortfolioText = styled.p`
+<<<<<<< HEAD
   flex: 1;
   text-align: left;
   padding: 20px;
   color: white;
   max-width: 600px;
+=======
+  text-align: left;
+  margin-left: 95px;
+  color: white;
+`;
+
+const ViewMoreButton = styled.button`
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  margin-left: auto;
+  border-radius: 5px;
+  margin-right: 95px;
+>>>>>>> 619310f (header,homepage updates)
 `;
 
 const Portfolio = () => {
@@ -28,7 +49,13 @@ const Portfolio = () => {
     <>
       <PortfolioContainer>
         <PortfolioText>
+<<<<<<< HEAD
           <h2 style={{ textTransform: "uppercase" }}>Our Portfolio</h2>
+=======
+          <h2 style={{ textTransform: "uppercase" }}>Our Portfolio
+            <ViewMoreButton>View more</ViewMoreButton>
+          </h2>
+>>>>>>> 619310f (header,homepage updates)
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text

@@ -9,7 +9,11 @@ import "slick-carousel/slick/slick-theme.css";
 const PartnersSection = styled.div`
   text-align: center;
   padding: 20px;
+<<<<<<< HEAD
   background-color: black;
+=======
+  background-color: #0F0F0F;
+>>>>>>> 619310f (header,homepage updates)
   color: white;
 `;
 
@@ -23,12 +27,20 @@ const SliderContainer = styled(Slider)`
 `;
 
 const PartnerItem = styled.div`
+<<<<<<< HEAD
   outline: none; /* Remove focus border */
+=======
+  outline: none; 
+>>>>>>> 619310f (header,homepage updates)
 `;
 
 const PartnerLogo = styled.img`
   max-width: 100%;
+<<<<<<< HEAD
   max-height: 100px; /* Set maximum height for consistency */
+=======
+  max-height: 100px; 
+>>>>>>> 619310f (header,homepage updates)
   margin: 0 auto;
 `;
 
@@ -45,7 +57,11 @@ const Partners = () => {
 
   const settings = {
     infinite: true,
+<<<<<<< HEAD
     slidesToShow: 3,
+=======
+    slidesToShow: 5,
+>>>>>>> 619310f (header,homepage updates)
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
