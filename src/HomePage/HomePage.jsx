@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-import React from "react";
-import styled from "styled-components";
-import homepage from "../images/homepage.png";
-import wideBanner from "../images/wide_banner.png";
-import sideBanner from "../images/side_banner.png";
-=======
+// import React from "react";
+// import styled from "styled-components";
+// import homepage from "../images/homepage.png";
+// import wideBanner from "../images/wide_banner.png";
+// import sideBanner from "../images/side_banner.png";
 import React, { useRef } from "react";
 import styled from "styled-components";
 import leftSide from "../images/left_side.png";
@@ -15,13 +13,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import leftArrow from "../icons/left_arrow.png";
 import rightArrow from "../icons/right_arrow.png";
->>>>>>> 619310f (header,homepage updates)
 
 const SearchContainer = styled.div`
   display: flex;
   align-items: center;
 
-<<<<<<< HEAD
   input {
     width: 80%;
     padding: 10px;
@@ -29,8 +25,6 @@ const SearchContainer = styled.div`
     border: 1px solid #999;
   }
 
-=======
->>>>>>> 619310f (header,homepage updates)
   button {
     padding: 10px;
     background-color: #333;
@@ -41,51 +35,42 @@ const SearchContainer = styled.div`
 `;
 
 const WideBanner = styled.div`
-<<<<<<< HEAD
   ${
     "" /* flex: 1;
   background-color: #bbb;
   padding: 20px; */
   }
-=======
-  // Your styles for WideBanner
->>>>>>> 619310f (header,homepage updates)
 `;
 
 const PageContainer = styled.div`
   background-color: black;
-<<<<<<< HEAD
+
   min-height: 100vh;
   padding: 20px;
 `;
 
+// const HomePageContainer = styled.div`
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//   margin: 20px;
 
-const HomePageContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px;
+//   .main-banner {
+//     flex: 1;
+//     background-color: #ddd;
+//   }
 
-  .main-banner {
-    flex: 1;
-    background-color: #ddd;
-  }
+//   .side-banner {
+//     flex: 0 0 30%;
+//     background-color: #ccc;
+//     padding: 20px;
+//     margin-left: 20px;
+//   }
 
-  .side-banner {
-    flex: 0 0 30%;
-    background-color: #ccc;
-    padding: 20px;
-    margin-left: 20px;
-  }
+//   .wide-banner {
 
-  .wide-banner {
-    ${
-      "" /* flex: 1;
-    background-color: #bbb;
-    padding: 5px; */
-=======
-  padding: 20px;
-`;
+//   padding: 20px;
+// `;
 
 const HomePageContainer = styled.div`
   display: flex;
@@ -146,29 +131,27 @@ const HomePageContainer = styled.div`
         padding: 12px 24px;
         gap: 10px;
       }
->>>>>>> 619310f (header,homepage updates)
     }
   }
 `;
 
-<<<<<<< HEAD
-const HomePageSection = () => {
-  return (
-      <>
-          <PageContainer>
-              <HomePageContainer>
-                  <img src={homepage} alt="homepage"></img>
-                  <div className="side-banner">
-                      <img src={sideBanner} alt="side_banner" />
-                      <WideBanner>
-                          <img src={wideBanner} alt="wide_banner" />
-                      </WideBanner>
-                  </div>
-              </HomePageContainer>
-          </PageContainer>
-      </>
-  );
-};
+// const HomePageSection = () => {
+//   return (
+//     <>
+//       <PageContainer>
+//         <HomePageContainer>
+//           <img src={homepage} alt="homepage"></img>
+//           <div className="side-banner">
+//             <img src={sideBanner} alt="side_banner" />
+//             <WideBanner>
+//               <img src={wideBanner} alt="wide_banner" />
+//             </WideBanner>
+//           </div>
+//         </HomePageContainer>
+//       </PageContainer>
+//     </>
+//   );
+// };
 
 // const HomePageSection = () => {
 //   return (
@@ -200,7 +183,6 @@ const HomePageSection = () => {
 //   );
 // };
 
-=======
 const Arrow = styled.div`
   position: absolute;
   cursor: pointer;
@@ -281,5 +263,4 @@ const HomePageSection = () => {
   );
 };
 
->>>>>>> 619310f (header,homepage updates)
 export default HomePageSection;

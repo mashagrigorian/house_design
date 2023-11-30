@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTwitter,
-  faFacebook,
-  faInstagram,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-import { faPhone } from "@fortawesome/fontawesome-free";
-
-
-const PinkLine = styled.div`
-  background-color: rgba(175, 75, 133, 1);
-  height: 15px;
-  padding: 20px 50px 20px 50px;
-  justify-content: space-between;
-`;
-const HeaderContainer = styled.header`
-  background-color: #333;
-  color: white;
-  padding: 10px;
-=======
 import React, { useState } from "react";
 import styled from "styled-components";
 import logo from "../images/logo.png";
@@ -45,22 +21,11 @@ const HeaderContainer = styled.header`
   background-color: black;
   color: white;
   padding: 10px 70px;
->>>>>>> 619310f (header,homepage updates)
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-<<<<<<< HEAD
-const OrderButton = styled.div`
-  background-color: white;
-  color: #ff69b4;
-  padding: 4px 5px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
-=======
 const LanguageSelector = styled.div`
   position: relative;
   display: flex;
@@ -123,7 +88,6 @@ const OrderButton = styled.div`
   font-size: 16px;
   line-height: 24px;
   padding: 8px 12px;
->>>>>>> 619310f (header,homepage updates)
 `;
 
 const LogoContainer = styled.div`
@@ -131,34 +95,6 @@ const LogoContainer = styled.div`
   flex-direction: column;
 `;
 
-<<<<<<< HEAD
-const LogoH1 = styled.h1`
-  margin: 0;
-`;
-
-const NavMenu = styled.nav`
-  ul {
-    list-style: none;
-    display: flex;
-    margin: 10px 20px;
-    padding: 0;
-  }
-
-  li {
-    margin-right: 20px;    
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-  }
-
-  a:hover {
-    border-bottom: 2px solid white;
-  }
-=======
 const LogoH1 = styled.h1``;
 
 const IconsContainer = styled.div`
@@ -194,29 +130,11 @@ const RegisterButton = styled.button`
   font-weight: 600;
   line-height: 21.78px;
   font-size: 18px;
->>>>>>> 619310f (header,homepage updates)
 `;
 
 const SocialIcons = styled.div`
   display: flex;
   align-items: center;
-<<<<<<< HEAD
-
-  svg {
-    font-size: 18px;
-    margin-right: 10px;
-    color: white;
-    cursor: pointer;
-  }
-
-  .vertical-line {
-    height: 20px;
-    width: 1px;
-    background-color: white;
-    margin: 0 10px;
-    color: white;
-  }
-=======
   gap: 8px;
   img {
     padding: 2px;
@@ -234,7 +152,6 @@ const LanguageIcon = styled.div`
   padding: 8px 16px;
   gap: 6px;
   font-family: Poppins;
->>>>>>> 619310f (header,homepage updates)
 `;
 
 const ContactInfo = styled.div`
@@ -246,9 +163,6 @@ const ContactInfo = styled.div`
     color: white;
   }
 `;
-<<<<<<< HEAD
-const Header = () => {
-=======
 
 const ShopButton = styled.div`
   cursor: pointer;
@@ -264,12 +178,12 @@ const ShopDropdown = styled.div`
   display: ${(props) => (props.isOpen ? "block" : "none")};
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: 0;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   z-index: 1;
-  color: black;
+  color: black; /* Set the text color to black */
 `;
 
 const ShopItem = styled.div`
@@ -281,35 +195,39 @@ const ShopItem = styled.div`
   }
 `;
 
-const Header = () => {
+const ShopDropdownButton = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isShopOpen, setIsShopOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+  };
+};
+
+const Header = () => {
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const [isShopOpen, setIsShopOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleLanguageDropdown = () => {
+    setIsLanguageOpen(!isLanguageOpen);
   };
 
   const toggleShopDropdown = () => {
     setIsShopOpen(!isShopOpen);
   };
 
->>>>>>> 619310f (header,homepage updates)
+  // const ShopDropdownButton = ({ children }) => {
+  //   const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+  // };
+
   return (
     <>
       <PinkLine>
         <SocialIcons>
-<<<<<<< HEAD
-          <FontAwesomeIcon icon={faInstagram} />
-          <FontAwesomeIcon icon={faYoutube} />
-          <FontAwesomeIcon icon={faFacebook} />
-          <FontAwesomeIcon icon={faTwitter} />
-          <div className="vertical-line"></div>
-          <ContactInfo>
-            <FontAwesomeIcon icon="fa-solid fa-phone" />
-            <p>000-00-00-00</p>
-          </ContactInfo>
-          <OrderButton>Order a call</OrderButton>
-=======
           <img src={instagram} alt="instagram" />
           <img src={youtube} alt="youtube" />
           <img src={facebook} alt="facebook" />
@@ -337,45 +255,36 @@ const Header = () => {
               <LanguageItem>Español</LanguageItem>
             </DropdownContent>
           </LanguageSelector>
->>>>>>> 619310f (header,homepage updates)
         </SocialIcons>
       </PinkLine>
       <HeaderContainer>
         <LogoContainer>
-<<<<<<< HEAD
-          <LogoH1>House Design</LogoH1>
-=======
           <LogoH1>
             <img src={logo} arc="logo" />
           </LogoH1>
->>>>>>> 619310f (header,homepage updates)
         </LogoContainer>
         <NavMenu>
           <ul>
             <li>Custom furniture production</li>
-<<<<<<< HEAD
-            <li>Interior design</li>
-            <li>Shop</li>
-            <li>About us</li>
-            <li>Portfolio</li>
-            <li>Contact us</li>
-=======
             <li>Interior Design</li>
             <li style={{ opacity: "70%" }}>
               <ShopButton onClick={toggleShopDropdown}>
                 <ClickableArea>
-                  Shop{" "}
-                  <img
-                    src={vector}
-                    style={{ paddingLeft: "7px" }}
-                    alt="vector"
-                  />
+                  Shop <img src={vector} alt="vector" />
                 </ClickableArea>
                 <ShopDropdown isOpen={isShopOpen} onClick={toggleShopDropdown}>
                   <ShopItem>1</ShopItem>
                   <ShopItem>2</ShopItem>
                 </ShopDropdown>
               </ShopButton>
+              {/* <ShopButton onClick={toggleShopDropdown}>
+                <ClickableArea>
+                  Shop <img src={vector} alt="vector" />
+                </ClickableArea>
+                <ShopDropdown isOpen={isShopOpen} onClick={toggleShopDropdown}>
+                  <ShopItem>1</ShopItem>
+                </ShopDropdown>
+              </ShopButton> */}
             </li>
             <li>Portfolio</li>
             <li>About Us</li>
@@ -387,7 +296,6 @@ const Header = () => {
             </IconsContainer>
             <li>Sign in</li>
             <RegisterButton>Register</RegisterButton>{" "}
->>>>>>> 619310f (header,homepage updates)
           </ul>
         </NavMenu>
       </HeaderContainer>
