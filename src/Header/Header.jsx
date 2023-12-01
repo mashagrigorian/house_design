@@ -10,11 +10,20 @@ import call from "../icons/call.png";
 import vector from "../icons/vector.png";
 import like from "../icons/like.png";
 import bag from "../icons/bag.png";
+import hamburgerIcon from "../icons/hamburger.png";
 
 const PinkLine = styled.div`
   background-color: rgba(175, 75, 133, 1);
   padding: 10px 70px;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
 `;
 
 const HeaderContainer = styled.header`
@@ -24,6 +33,10 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const LanguageSelector = styled.div`
@@ -84,6 +97,11 @@ const OrderButton = styled.div`
 const LogoContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+    align-item: left;
+  }
 `;
 
 const LogoH1 = styled.h1``;
@@ -93,6 +111,10 @@ const IconsContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
 `;
 
 const NavMenu = styled.ul`
@@ -101,11 +123,43 @@ const NavMenu = styled.ul`
     display: flex;
     align-items: center;
     gap: 24px;
+
+    @media (max-width: 768px) {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      color: #ffffff;
+      display: ${(props) => (props.isOpen ? "flex" : "none")};
+    }
   }
 
   li {
     margin-right: 20px;
     color: #ffffff;
+  }
+`;
+
+const HamburgerIcon = styled.img`
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+
+  @media (min-width: 769px) {
+    order: 1;
+    display: none; /* Hide the hamburger icon on larger screens */
+  }
+`;
+
+const MenuContainer = styled.div`
+  display: none;
+  gap: 10px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -187,9 +241,13 @@ const ShopItem = styled.div`
 `;
 
 const Header = () => {
-  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isShopOpen, setIsShopOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const toggleShopDropdown = () => {
     setIsShopOpen(!isShopOpen);
@@ -202,6 +260,7 @@ const Header = () => {
   return (
     <>
       <PinkLine>
+        <HamburgerIcon src={hamburgerIcon} alt="Menu" onClick={toggleMenu} />
         <SocialIcons>
           <img src={instagram} alt="instagram" />
           <img src={youtube} alt="youtube" />
@@ -238,7 +297,8 @@ const Header = () => {
             <img src={logo} arc="logo" />
           </LogoH1>
         </LogoContainer>
-        <NavMenu>
+
+        <NavMenu isOpen={isMenuOpen}>
           <ul>
             <li>Custom furniture production</li>
             <li>Interior Design</li>

@@ -9,6 +9,7 @@ import rightArrow from "../icons/right_arrow.png";
 import rightBanner from "../images/rightBanner.png";
 import line from "../images/line.png";
 import search from "../icons/search.png";
+import leftSideMobile from "../images/leftSideMobile.png";
 
 const ApplyButton = styled.div`
   display: flex;
@@ -42,12 +43,22 @@ const HomePageContainer = styled.div`
   justify-content: space-between;
   margin-left: 20px;
 
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-image: url(${require("../images/leftSideMobile.png")});
+  }
+
   .side-banner {
-    ${"" /* flex: 0 0 30%; */}
+    ${"" /* background-image: url(${require("../images/left_side.png")}); */}
     padding: 20px;
     margin-left: 20px;
     position: relative;
     border-radius: 5px;
+    max-width: 100%;
 
     .slider-content {
       margin-bottom: 20px;
@@ -103,12 +114,15 @@ const HomePageContainer = styled.div`
 const RightBannerContainer = styled.div`
   position: relative;
 
+  @media (max-width: 768px) {
+    flex: 0 0 100%;
+  }
+
   img {
     border-radius: 24px;
   }
 
   .side-banner {
-    ${"" /* flex: 0 0 30%; */}
     margin-left: 20px;
     position: relative;
     padding: 20px 0px;
@@ -170,7 +184,6 @@ const Arrow = styled.div`
 
 const SearchContainer = styled.div`
   position: absolute;
-  ${"" /* bottom: 20px; */}
   left: 50%;
   transform: translateX(-50%);
   display: block;
@@ -180,6 +193,12 @@ const SearchContainer = styled.div`
   padding: 17px 30px;
   border-radius: 8px;
   margin-left: 14px;
+
+  @media (max-width: 768px) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
 
   input {
     width: 400px;
