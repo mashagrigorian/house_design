@@ -43,8 +43,6 @@ const Portfolio = () => {
     <>
       <PortfolioContainer>
         <PortfolioText>
-          <h2 style={{ textTransform: "uppercase" }}>Our Portfolio</h2>
-
           <h2 style={{ textTransform: "uppercase" }}>
             Our Portfolio
             <ViewMoreButton>View more</ViewMoreButton>

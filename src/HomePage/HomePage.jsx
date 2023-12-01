@@ -1,20 +1,16 @@
-// import React from "react";
-// import styled from "styled-components";
-// import homepage from "../images/homepage.png";
-// import wideBanner from "../images/wide_banner.png";
-// import sideBanner from "../images/side_banner.png";
 import React, { useRef } from "react";
 import styled from "styled-components";
 import leftSide from "../images/left_side.png";
-import wideBanner from "../images/wide_banner.png";
-import sideBanner from "../images/side_banner.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import leftArrow from "../icons/left_arrow.png";
 import rightArrow from "../icons/right_arrow.png";
+import rightBanner from "../images/rightBanner.png";
+import line from "../images/line.png";
+import search from "../icons/search.png";
 
-const SearchContainer = styled.div`
+const ApplyButton = styled.div`
   display: flex;
   align-items: center;
 
@@ -34,43 +30,12 @@ const SearchContainer = styled.div`
   }
 `;
 
-const WideBanner = styled.div`
-  ${
-    "" /* flex: 1;
-  background-color: #bbb;
-  padding: 20px; */
-  }
-`;
-
 const PageContainer = styled.div`
   background-color: black;
 
   min-height: 100vh;
   padding: 20px;
 `;
-
-// const HomePageContainer = styled.div`
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-between;
-//   margin: 20px;
-
-//   .main-banner {
-//     flex: 1;
-//     background-color: #ddd;
-//   }
-
-//   .side-banner {
-//     flex: 0 0 30%;
-//     background-color: #ccc;
-//     padding: 20px;
-//     margin-left: 20px;
-//   }
-
-//   .wide-banner {
-
-//   padding: 20px;
-// `;
 
 const HomePageContainer = styled.div`
   display: flex;
@@ -117,7 +82,7 @@ const HomePageContainer = styled.div`
       font-family: Poppins;
     }
 
-    ${SearchContainer} {
+    ${ApplyButton} {
       position: absolute;
       bottom: 20px;
       top: 77%;
@@ -135,53 +100,50 @@ const HomePageContainer = styled.div`
   }
 `;
 
-// const HomePageSection = () => {
-//   return (
-//     <>
-//       <PageContainer>
-//         <HomePageContainer>
-//           <img src={homepage} alt="homepage"></img>
-//           <div className="side-banner">
-//             <img src={sideBanner} alt="side_banner" />
-//             <WideBanner>
-//               <img src={wideBanner} alt="wide_banner" />
-//             </WideBanner>
-//           </div>
-//         </HomePageContainer>
-//       </PageContainer>
-//     </>
-//   );
-// };
+const RightBannerContainer = styled.div`
+  position: relative;
 
-// const HomePageSection = () => {
-//   return (
-//     <HomePageContainer>
-//       <div className="main-banner">
-//         <h2>House design & furnishing</h2>
-//         <p>
-//           Lorem Ipsum is simply dummy text of the printing and typesetting
-//           industry.
-//         </p>
-//       </div>
+  img {
+    border-radius: 24px;
+  }
 
-//       <div className="side-banner">
-//         <h2>Go shopping</h2>
-//         <p>
-//           Lorem Ipsum is simply dummy text of the printing and typesetting
-//           industry.
-//         </p>
+  .side-banner {
+    ${"" /* flex: 0 0 30%; */}
+    margin-left: 20px;
+    position: relative;
+    padding: 20px 0px;
 
-//         <WideBanner>
-//           <h2>Search for any product</h2>
-//           <SearchContainer>
-//             <input type="text" placeholder="Search..." />
-//             <button>Search</button>
-//           </SearchContainer>
-//         </WideBanner>
-//       </div>
-//     </HomePageContainer>
-//   );
-// };
+    h4 {
+      position: absolute;
+      top: 60%;
+      left: 7%;
+      transform: 70%;
+      color: #ffffff;
+      font-size: 36px;
+      text-transform: uppercase;
+      font-family: Poppins;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 21px;
+      position: absolute;
+      top: 75%;
+      left: 7.5%;
+      color: #ffffff;
+      font-family: "Poppins";
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+
+      .line {
+        width: 80px;
+        margin-left: 20px;
+      }
+    }
+  }
+`;
 
 const Arrow = styled.div`
   position: absolute;
@@ -203,6 +165,41 @@ const Arrow = styled.div`
 
   &:last-child {
     right: 0px;
+  }
+`;
+
+const SearchContainer = styled.div`
+  position: absolute;
+  ${"" /* bottom: 20px; */}
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  justify: space-between;
+  align-items: center;
+  background-color: #af4b85;
+  padding: 17px 30px;
+  border-radius: 8px;
+  margin-left: 14px;
+
+  input {
+    width: 400px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    background: #ffffff url(${require("../icons/search.png")}) no-repeat right;
+    background-size: 20px;
+    background-position: calc(100% - 10px) center;
+  }
+
+  p {
+    font-size: 20px;
+    color: #ffffff;
+    font-family: "Poppins";
+    font-weight: 500;
   }
 `;
 
@@ -240,7 +237,6 @@ const HomePageSection = () => {
             alt="left_banner"
             style={{ borderRadius: "24px" }}
           />
-
           <div className="arrows">
             <Arrow onClick={prevSlide}>
               <img src={leftArrow} alt="left-arrow" />
@@ -254,10 +250,27 @@ const HomePageSection = () => {
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </p>
-          <SearchContainer>
+          <ApplyButton>
             <button>Apply</button>
-          </SearchContainer>
+          </ApplyButton>
         </div>
+        <RightBannerContainer>
+          <div className="side-banner">
+            <img src={rightBanner} alt="rightBanner" />
+            <h4>Go Shopping</h4>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+              <div className="line">
+                <img src={line} alt="line" />
+              </div>
+            </p>
+          </div>
+          <SearchContainer>
+            <p>Search for any product</p>
+            <input type="text" placeholder="Search" />
+          </SearchContainer>
+        </RightBannerContainer>
       </HomePageContainer>
     </PageContainer>
   );

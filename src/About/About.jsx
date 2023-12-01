@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import about from "../images/about.png";
-import backgroundImage from "../images/background_image.png"
+import backgroundImage from "../images/background_image.png";
 
 const AboutContainer = styled.div`
   background-color: black;
@@ -15,7 +15,7 @@ const TextContainer = styled.div`
   flex: 1;
   text-align: center;
   padding: 20px;
-=======
+  color: white;
 `;
 
 // const TextContainer = styled.div`
@@ -45,14 +45,12 @@ const ReadMoreButton = styled.button`
 
 const BackgroundContainer = styled.div`
   //position: relative;
-  
 `;
 
 const About = () => {
   return (
     <AboutContainer>
       <TextContainer>
-        <h2 style={{ textTransform: "uppercase" }}>About out company</h2>
         <h2 style={{ textTransform: "uppercase", marginBottom: "20px" }}>
           About out company
         </h2>
@@ -72,10 +70,6 @@ const About = () => {
       <PhotoContainer>
         <img src={about} alt="about" />
       </PhotoContainer>
-
-      {/*<BackgroundContainer>*/}
-      {/*  <img src={backgroundImage} alt="background_image"/>*/}
-      {/*</BackgroundContainer>*/}
     </AboutContainer>
   );
 };

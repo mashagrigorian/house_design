@@ -55,15 +55,6 @@ const DropdownContent = styled.div`
   z-index: 1;
 `;
 
-// const ShopDropdown = styled.div`
-//   display: ${(props) => (props.isOpen ? "block" : "none")};
-//   position: absolute;
-//   background-color: white;
-//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-//   border-radius: 5px;
-//   z-index: 1;
-// `;
-
 const LanguageItem = styled.div`
   padding: 10px;
   cursor: pointer;
@@ -144,7 +135,7 @@ const SocialIcons = styled.div`
 const LanguageIcon = styled.div`
   width: 30px;
   height: 30px;
-  background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+  background-color: rgba(255, 255, 255, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -183,7 +174,7 @@ const ShopDropdown = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   z-index: 1;
-  color: black; /* Set the text color to black */
+  color: black;
 `;
 
 const ShopItem = styled.div`
@@ -195,34 +186,18 @@ const ShopItem = styled.div`
   }
 `;
 
-const ShopDropdownButton = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-};
-
 const Header = () => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isShopOpen, setIsShopOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleLanguageDropdown = () => {
-    setIsLanguageOpen(!isLanguageOpen);
-  };
-
   const toggleShopDropdown = () => {
     setIsShopOpen(!isShopOpen);
   };
 
-  // const ShopDropdownButton = ({ children }) => {
-  //   const [isOpen, setIsOpen] = useState(false);
-
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-  // };
 
   return (
     <>
@@ -270,21 +245,14 @@ const Header = () => {
             <li style={{ opacity: "70%" }}>
               <ShopButton onClick={toggleShopDropdown}>
                 <ClickableArea>
-                  Shop <img src={vector} alt="vector" />
+                  Shop{" "}
+                  <img src={vector} alt="vector" style={{ padding: "5px" }} />
                 </ClickableArea>
                 <ShopDropdown isOpen={isShopOpen} onClick={toggleShopDropdown}>
                   <ShopItem>1</ShopItem>
                   <ShopItem>2</ShopItem>
                 </ShopDropdown>
               </ShopButton>
-              {/* <ShopButton onClick={toggleShopDropdown}>
-                <ClickableArea>
-                  Shop <img src={vector} alt="vector" />
-                </ClickableArea>
-                <ShopDropdown isOpen={isShopOpen} onClick={toggleShopDropdown}>
-                  <ShopItem>1</ShopItem>
-                </ShopDropdown>
-              </ShopButton> */}
             </li>
             <li>Portfolio</li>
             <li>About Us</li>
