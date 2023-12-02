@@ -9,7 +9,9 @@ import "slick-carousel/slick/slick-theme.css";
 const PartnersSection = styled.div`
   text-align: center;
   padding: 20px;
+
   background-color: black;
+  background-color: #0f0f0f;
   color: white;
 `;
 
@@ -45,7 +47,9 @@ const Partners = () => {
 
   const settings = {
     infinite: true,
+
     slidesToShow: 3,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
