@@ -49,7 +49,10 @@ const HomePageContainer = styled.div`
     align-items: center;
     margin: 20px;
     padding: 20px;
-    background-image: url(${require("../images/leftSideMobile.png")});
+    overflow: hidden;
+    ${
+      "" /* background-image: url(${require("../images/leftSideMobile.png")}); */
+    }
   }
 
   .side-banner {

@@ -11,6 +11,7 @@ import vector from "../icons/vector.png";
 import like from "../icons/like.png";
 import bag from "../icons/bag.png";
 import hamburgerIcon from "../icons/hamburger.png";
+import user from "../icons/user.png";
 
 const PinkLine = styled.div`
   background-color: rgba(175, 75, 133, 1);
@@ -35,7 +36,8 @@ const HeaderContainer = styled.header`
   align-items: center;
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: row;
+    padding: 10px 20px;
   }
 `;
 
@@ -101,10 +103,18 @@ const LogoContainer = styled.div`
   @media (max-width: 768px) {
     margin-bottom: 20px;
     align-item: left;
+    width: 92px;
+    height: 32px;
   }
 `;
 
-const LogoH1 = styled.h1``;
+const LogoImageContainer = styled.img`
+  @media (max-width: 768px) {
+    width: 92px;
+    height: 32px;
+    padding: 5px;
+  }
+`;
 
 const IconsContainer = styled.div`
   display: flex;
@@ -114,6 +124,15 @@ const IconsContainer = styled.div`
 
   @media (max-width: 768px) {
     margin-top: 20px;
+    display: ${(props) => (props.isOpen ? "flex" : "none")};
+  }
+`;
+
+const MobileIconsContainer = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
   }
 `;
 
@@ -126,7 +145,6 @@ const NavMenu = styled.ul`
 
     @media (max-width: 768px) {
       list-style: none;
-      display: flex;
       flex-direction: column;
       align-items: center;
       gap: 10px;
@@ -143,12 +161,14 @@ const NavMenu = styled.ul`
 
 const HamburgerIcon = styled.img`
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
+  opacity: 80%;
+  margin-bottom: 10px;
 
   @media (min-width: 769px) {
-    order: 1;
-    display: none; /* Hide the hamburger icon on larger screens */
+    cursor: pointer;
+    display: none;
   }
 `;
 
@@ -260,7 +280,6 @@ const Header = () => {
   return (
     <>
       <PinkLine>
-        <HamburgerIcon src={hamburgerIcon} alt="Menu" onClick={toggleMenu} />
         <SocialIcons>
           <img src={instagram} alt="instagram" />
           <img src={youtube} alt="youtube" />
@@ -292,12 +311,15 @@ const Header = () => {
         </SocialIcons>
       </PinkLine>
       <HeaderContainer>
+        <HamburgerIcon src={hamburgerIcon} alt="Menu" onClick={toggleMenu} />
         <LogoContainer>
-          <LogoH1>
-            <img src={logo} arc="logo" />
-          </LogoH1>
+          <LogoImageContainer src={logo} arc="logo" />
         </LogoContainer>
-
+        <MobileIconsContainer>
+          <img src={like} alt="like" />
+          <img src={bag} alt="bag" />
+          <img src={user} alt="user" />
+        </MobileIconsContainer>
         <NavMenu isOpen={isMenuOpen}>
           <ul>
             <li>Custom furniture production</li>
@@ -305,7 +327,7 @@ const Header = () => {
             <li style={{ opacity: "70%" }}>
               <ShopButton onClick={toggleShopDropdown}>
                 <ClickableArea>
-                  Shop{" "}
+                  Shop
                   <img src={vector} alt="vector" style={{ padding: "5px" }} />
                 </ClickableArea>
                 <ShopDropdown isOpen={isShopOpen} onClick={toggleShopDropdown}>
@@ -323,7 +345,7 @@ const Header = () => {
               <img src={bag} alt="bag" />
             </IconsContainer>
             <li>Sign in</li>
-            <RegisterButton>Register</RegisterButton>{" "}
+            <RegisterButton>Register</RegisterButton>
           </ul>
         </NavMenu>
       </HeaderContainer>
